@@ -289,13 +289,13 @@ function watchSuggestions() {
     const seen = new Set();
     known.games = Object.values(s.val() || {})
       .sort((a, b) => (b.endedAt || 0) - (a.endedAt || 0)).map(g => g.gameName)
-      .filter(n => n && !seen.has(n) && seen.add(n)).slice(0, 6);
+      .filter(n => n && !seen.has(n) && seen.add(n)).slice(0, 5);
     renderGameChips();
   });
   onValue(ref(db, 'playerRecords'), s => {
     known.players = Object.values(s.val() || {})
       .map(p => ({ name: p.name, last: Object.values(p.games || {}).reduce((m, g) => Math.max(m, g.endedAt || 0), 0) }))
-      .sort((a, b) => b.last - a.last).map(p => p.name).slice(0, 8);
+      .sort((a, b) => b.last - a.last).map(p => p.name).slice(0, 5);
     renderPlayerChips();
   });
 }

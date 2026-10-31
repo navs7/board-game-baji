@@ -435,3 +435,7 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in ok
   50% { transform: translateY(0) scale(1, 1); }
 }
 @media (prefers-reduced-motion: reduce) { .pcard .back { opacity: 0; animation: none; } .pcard .front { opacity: 1; animation: none; } .pcard, .meeple { animation: none; } }
+
+/* suggestion chips: five compact pills on a single row */
+.chips.one-row { flex-wrap: nowrap; gap: 5px; }
+.chips.one-row .chip { flex: 0 1 auto; min-width: 0; min-height: 34px; padding: 0 8px; font-size: .75rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
